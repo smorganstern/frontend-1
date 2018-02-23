@@ -16,6 +16,7 @@ import injectReducer from 'utils/injectReducer';
 import injectSaga from 'utils/injectSaga';
 import { makeSelectRepos, makeSelectLoading, makeSelectError } from 'containers/App/selectors';
 import H2 from 'components/H2';
+import H1 from 'components/H1';
 import ReposList from 'components/ReposList';
 import AtPrefix from './AtPrefix';
 import CenteredSection from './CenteredSection';
@@ -28,10 +29,12 @@ import { changeUsername } from './actions';
 import { makeSelectUsername } from './selectors';
 import reducer from './reducer';
 import saga from './saga';
+import Wrapper from './Wrapper';
 
 export class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   /**
    * when initial state username is not null, submit the form to load repos
+   * NOT NEEDED will change
    */
   componentDidMount() {
     if (this.props.username && this.props.username.trim().length > 0) {
@@ -50,39 +53,83 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
     return (
       <article>
         <Helmet>
-          <title>Home Page</title>
-          <meta name="description" content="A React.js Boilerplate application homepage" />
+          <title>TutorFind</title>
+          <meta name="Tutorfind" content="A web app to connect students and teachers for improved learning" />
         </Helmet>
         <div>
+		<Wrapper>
           <CenteredSection>
-            <H2>
-              <FormattedMessage {...messages.startProjectHeader} />
-            </H2>
+            <H1>
+              <FormattedMessage {...messages.aboutUsHeader} />
+            </H1>
             <p>
-              <FormattedMessage {...messages.startProjectMessage} />
+              <FormattedMessage {...messages.aboutMessage} />
             </p>
           </CenteredSection>
-          <Section>
-            <H2>
-              <FormattedMessage {...messages.trymeHeader} />
-            </H2>
-            <Form onSubmit={this.props.onSubmitForm}>
+          <CenteredSection>
+			<H1>
+			  <FormattedMessage {...messages.signUpHeader} />
+			</H1>
+			
+			{/*Form*/}
+			<Form onSubmit={this.props.onSubmitForm}>
+			  <div>
               <label htmlFor="username">
-                <FormattedMessage {...messages.trymeMessage} />
-                <AtPrefix>
-                  <FormattedMessage {...messages.trymeAtPrefix} />
-                </AtPrefix>
+                <FormattedMessage {...messages.usernameMessage} />
                 <Input
                   id="username"
                   type="text"
-                  placeholder="mxstbr"
+                  placeholder="Student1"
                   value={this.props.username}
                   onChange={this.props.onChangeUsername}
                 />
               </label>
-            </Form>
-            <ReposList {...reposListProps} />
-          </Section>
+			  </div>
+			  
+			  <div>
+			  <label htmlFor="email">
+                <FormattedMessage {...messages.emailMessage} />
+                <Input
+                  id="email"
+                  type="text"
+                  placeholder="student1@student.ndnu.edu"
+                  value={this.props.email}
+                  onChange={this.props.onChangeEmail}
+                />
+              </label>
+			  </div>
+			  
+			  <div>
+			  <label htmlFor="password">
+                <FormattedMessage {...messages.passwordMessage} />
+                <Input
+                  id="password"
+                  type="password"
+                  placeholder="********"
+                  value={this.props.password}
+                  onChange={this.props.onChangePassword}
+                />
+              </label>
+			  </div>
+			  
+			  <div>
+			  <label htmlFor="confirmPassword">
+                <FormattedMessage {...messages.confirmPasswordMessage} />
+                <Input
+                  id="password"
+                  type="password"
+                  placeholder="********"
+                  value={this.props.password}
+                  onChange={this.props.onChangePassword}
+                />
+              </label>
+			  </div>
+			  
+			</Form>
+			{/*end Form*/}
+			
+		  </CenteredSection>           
+		</Wrapper>	
         </div>
       </article>
     );
@@ -101,15 +148,18 @@ HomePage.propTypes = {
   ]),
   onSubmitForm: PropTypes.func,
   username: PropTypes.string,
+  /*password: PropTypes.string,*/
   onChangeUsername: PropTypes.func,
+  /*onChangePassword: PropTypes.func,*/
 };
 
 export function mapDispatchToProps(dispatch) {
   return {
     onChangeUsername: (evt) => dispatch(changeUsername(evt.target.value)),
+	/*onChangePassword: (evt) => dispatch(changePassword(evt.target.value)),*/
     onSubmitForm: (evt) => {
       if (evt !== undefined && evt.preventDefault) evt.preventDefault();
-      dispatch(loadRepos());
+      /*dispatch(loadRepos()); Submit form code here*/
     },
   };
 }
@@ -117,6 +167,7 @@ export function mapDispatchToProps(dispatch) {
 const mapStateToProps = createStructuredSelector({
   repos: makeSelectRepos(),
   username: makeSelectUsername(),
+  /*password: makeSelectPassword(),*/
   loading: makeSelectLoading(),
   error: makeSelectError(),
 });

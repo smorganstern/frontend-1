@@ -6,24 +6,32 @@
 import { defineMessages } from 'react-intl';
 
 export default defineMessages({
-  startProjectHeader: {
-    id: 'boilerplate.containers.HomePage.start_project.header',
-    defaultMessage: 'Start your next react project in seconds',
+  aboutUsHeader: {
+    id: 'boilerplate.containers.HomePage.aboutUs.Header',
+    defaultMessage: 'About Us',
   },
-  startProjectMessage: {
-    id: 'boilerplate.containers.HomePage.start_project.message',
-    defaultMessage: 'A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices',
+  aboutMessage: {
+    id: 'boilerplate.containers.HomePage.about.Message',
+    defaultMessage: 'TutorFind is a complimentary service developed by the graduating class of the computer science department at NDNU.  The website facilitates the initial mutual discovery and sharing of contact information with tutors and those seeking tutoring assistance.  Users can quickly find matches by filtering by the subject matter that they seek assistance on or offer assistance in.',
   },
-  trymeHeader: {
-    id: 'boilerplate.containers.HomePage.tryme.header',
-    defaultMessage: 'Try me!',
+  signUpHeader: {
+    id: 'boilerplate.containers.HomePage.signUp.Header',
+    defaultMessage: 'Sign Up',
   },
-  trymeMessage: {
-    id: 'boilerplate.containers.HomePage.tryme.message',
-    defaultMessage: 'Show Github repositories by',
+  usernameMessage: {
+    id: 'boilerplate.containers.HomePage.username.message',
+    defaultMessage: 'User Name',
   },
-  trymeAtPrefix: {
-    id: 'boilerplate.containers.HomePage.tryme.atPrefix',
-    defaultMessage: '@',
+  passwordMessage: {
+    id: 'boilerplate.containers.HomePage.password.message',
+    defaultMessage: 'Password',
+  },
+  confirmPasswordMessage: {
+    id: 'boilerplate.containers.HomePage.confirmPassword.message',
+    defaultMessage: 'Confirm Password',
+  },
+  emailMessage: {
+    id: 'boilerplate.containers.HomePage.email.message',
+    defaultMessage: 'Email',
   },
 });
