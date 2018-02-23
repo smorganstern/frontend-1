@@ -19,6 +19,10 @@ import {
   CHANGE_USERNAME,
 } from './constants';
 
+import {
+  CHANGE_PASSWORD,
+} from './constants';
+
 /**
  * Changes the input field of the form
  *
@@ -30,5 +34,12 @@ export function changeUsername(name) {
   return {
     type: CHANGE_USERNAME,
     name,
+  };
+}
+
+export function changePassword(pass) {
+  return {
+    type: CHANGE_PASSWORD,
+    pass: pass,
   };
 }

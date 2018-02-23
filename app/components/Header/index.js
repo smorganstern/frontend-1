@@ -5,15 +5,17 @@ import A from './A';
 import Img from './Img';
 import NavBar from './NavBar';
 import HeaderLink from './HeaderLink';
-import Banner from './banner.jpg';
+import logo from './tutorfindlogo.png';
 import messages from './messages';
+import Wrapper from './Wrapper';
 
 class Header extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
       <div>
-        <A href="https://twitter.com/mxstbr">
-          <Img src={Banner} alt="react-boilerplate - Logo" />
+	  <Wrapper>
+        <A href="https://ndnu.edu">
+          <Img src={logo} alt="Tutorfind - Logo" length="100px" width="100px"/>
         </A>
         <NavBar>
           <HeaderLink to="/">
@@ -23,6 +25,7 @@ class Header extends React.Component { // eslint-disable-line react/prefer-state
             <FormattedMessage {...messages.features} />
           </HeaderLink>
         </NavBar>
+	  </Wrapper> 
       </div>
     );
   }
