@@ -8,13 +8,15 @@ import HeaderLink from './HeaderLink';
 import logo from './tutorfindlogo.png';
 import messages from './messages';
 import Wrapper from './Wrapper';
+import Button from 'components/Button';
 
 class Header extends React.Component { // eslint-disable-line react/prefer-stateless-function
+
   render() {
     return (
       <div>
 	  <Wrapper>
-        <A href="https://ndnu.edu">
+        <A href="/">
           <Img src={logo} alt="Tutorfind - Logo" length="100px" width="100px"/>
         </A>
         <NavBar>
@@ -24,6 +26,8 @@ class Header extends React.Component { // eslint-disable-line react/prefer-state
           <HeaderLink to="/features">
             <FormattedMessage {...messages.features} />
           </HeaderLink>
+		  <Button> Sign In </Button>
+		  
         </NavBar>
 	  </Wrapper> 
       </div>

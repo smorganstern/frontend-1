@@ -15,21 +15,27 @@ import { createStructuredSelector } from 'reselect';
 import injectReducer from 'utils/injectReducer';
 import injectSaga from 'utils/injectSaga';
 import { makeSelectRepos, makeSelectLoading, makeSelectError } from 'containers/App/selectors';
-import H2 from 'components/H2';
-import H1 from 'components/H1';
-import ReposList from 'components/ReposList';
-import AtPrefix from './AtPrefix';
+
 import CenteredSection from './CenteredSection';
 import Form from './Form';
 import Input from './Input';
 import Section from './Section';
 import messages from './messages';
+import Wrapper from './Wrapper';
+
+import H2 from 'components/H2';
+import H1 from 'components/H1';
+import Button from 'components/Button';
+import Toggle from 'components/Toggle';
+import ToggleOption from 'components/ToggleOption';
+
+import ReposList from 'components/ReposList';
+import AtPrefix from './AtPrefix';
 import { loadRepos } from '../App/actions';
 import { changeUsername } from './actions';
 import { makeSelectUsername } from './selectors';
 import reducer from './reducer';
 import saga from './saga';
-import Wrapper from './Wrapper';
 
 export class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   /**
@@ -58,6 +64,7 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
         </Helmet>
         <div>
 		<Wrapper>
+		  {/*About Us*/}
           <CenteredSection>
             <H1>
               About Us
@@ -66,6 +73,9 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
               <FormattedMessage {...messages.aboutMessage} />
             </p>
           </CenteredSection>
+		  {/*end About Us*/}
+		
+		  {/*Sign up*/}
           <CenteredSection>
 			<H1>
 			  <FormattedMessage {...messages.signUpHeader} />
@@ -125,10 +135,23 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
               </label>
 			  </div>
 			  
+			  <div>
+			    <p> I am a </p>
+				<Toggle>
+					<ToggleOption value="student" intl="" />
+									
+				</Toggle>
+			  </div>
+			  
+			  <div>
+				<Button> Sign Up </Button>
+			  </div>
+			  
 			</Form>
 			{/*end Form*/}
 			
-		  </CenteredSection>           
+		  </CenteredSection>  
+		  {/*end Sign up */}
 		</Wrapper>	
         </div>
       </article>
