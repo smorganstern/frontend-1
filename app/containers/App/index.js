@@ -13,6 +13,11 @@ import { Switch, Route } from 'react-router-dom';
 
 import HomePage from 'containers/HomePage/Loadable';
 import FeaturePage from 'containers/FeaturePage/Loadable';
+import StudentProfile from 'containers/StudentProfile/Loadable';
+import StudentFeed from 'containers/StudentFeed/Loadable';
+import TutorProfile from 'containers/TutorProfile/Loadable';
+import TutorFeed from 'containers/TutorFeed/Loadable';
+import AdminFeed from 'containers/AdminFeed/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
@@ -39,6 +44,11 @@ export default function App() {
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route path="/features" component={FeaturePage} />
+		<Route path="/StudentProfile" component={StudentProfile} />
+		<Route path="/StudentFeed" component={StudentFeed} />
+		<Route path="/TutorProfile" component={TutorProfile} />
+		<Route path="/TutorFeed" component={TutorFeed} />
+		<Route path="/AdminFeed" component={AdminFeed} />
         <Route path="" component={NotFoundPage} />
       </Switch>
       <Footer />

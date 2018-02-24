@@ -27,7 +27,7 @@ function Footer() {
 				<A href="/features"> Features </A>
 			</ListItem>
 			<ListItem>
-				<A href="/"> About Us </A>
+				<A href="/StudentProfile"> Profile </A>
 			</ListItem>
 		  </List>
 		</section>

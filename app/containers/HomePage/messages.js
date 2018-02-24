@@ -34,4 +34,8 @@ export default defineMessages({
     id: 'boilerplate.containers.HomePage.email.message',
     defaultMessage: 'Email',
   },
+  studentMessage: {
+    id: 'boilerplate.containers.HomePage.student.message',
+    defaultMessage: 'Student',
+  },
 });
