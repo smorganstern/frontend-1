@@ -60,7 +60,7 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
 		<Wrapper>
           <CenteredSection>
             <H1>
-              <FormattedMessage {...messages.aboutUsHeader} />
+              About Us
             </H1>
             <p>
               <FormattedMessage {...messages.aboutMessage} />
@@ -91,7 +91,7 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
                 <FormattedMessage {...messages.emailMessage} />
                 <Input
                   id="email"
-                  type="text"
+                  type="email"
                   placeholder="student1@student.ndnu.edu"
                   value={this.props.email}
                   onChange={this.props.onChangeEmail}
